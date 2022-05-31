@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     let name = localStorage.getItem('name')
-    if(name == null) {
-        namae = prompt('Enter your name, please')
-        localStorage.setItem('name', namae)
+    if((name == null) || (name == '')) {
+        name = prompt('Enter your name, please')
+        localStorage.setItem('name', name)
         swal({
-            title: "Welcome " + localStorage.getItem('name') ,
+            title: "Welcome",
             text: "To the most bigger heatlhy store",
             icon: "success",
             button: "ok",
@@ -27,7 +27,7 @@ class users {
 }
 
 nusers = []
-
+let conection 
 function r () {
    ( localStorage.getItem('name') != '' ) ? console.log( conection = new users({name:localStorage.getItem('name'), lastConect: new Date(), })) : console.log('') ;
     nusers.push(conection)
